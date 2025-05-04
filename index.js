@@ -10,6 +10,8 @@ import { AreaofPracticeModel } from "./api/model/master/AreaofPractice.js";
 import master_state_router from "./api/routes/master/StateListRoutes.js";
 import master_city_router from "./api/routes/master/CitiesListRoutes.js";
 import master_AreaOfPractice_router from "./api/routes/master/AreaofPracticeRoutes.js";
+import { LawyersDetailsModel } from "./api/model/lawyers/LawyerDetailsModel.js";
+import master_LawyersDetails_router from "./api/routes/lawyers/LawyersDetailsRoutes.js";
 
 // App Use
 
@@ -27,13 +29,16 @@ app.use(
 StateListModel.sync();
 CityListModel.sync();
 AreaofPracticeModel.sync();
-
+LawyersDetailsModel.sync();
 // Routes
 
 // Master routes
 app.use("/api/master", master_state_router);
 app.use("/api/master", master_city_router);
 app.use("/api/master", master_AreaOfPractice_router);
+
+// Lawyers routes
+app.use("/api/lawyers", master_LawyersDetails_router);
 
 // PORT Listen
 
